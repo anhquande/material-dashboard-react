@@ -16,6 +16,7 @@ import Icons from "views/Icons/Icons.jsx";
 import Maps from "views/Maps/Maps.jsx";
 import NotificationsPage from "views/Notifications/Notifications.jsx";
 import UpgradeToPro from "views/UpgradeToPro/UpgradeToPro.jsx";
+import TodoList from "../views/TodoList";
 
 const dashboardRoutes = [
   {
@@ -38,6 +39,13 @@ const dashboardRoutes = [
     navbarName: "Table List",
     icon: "content_paste",
     component: TableList
+  },
+  {
+    path: "/todos",
+    sidebarName: "Todos",
+    navbarName: "Todos",
+    icon: "content_paste",
+    component: TodoList
   },
   {
     path: "/typography",

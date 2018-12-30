@@ -8,6 +8,8 @@ import rootSaga from "./rootSaga";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
+import logger from "redux-logger";
+
 const sagaMiddleware = createSagaMiddleware();
 
 const pReducer = persistReducer(
@@ -18,10 +20,11 @@ const pReducer = persistReducer(
   rootReducer
 );
 
-const store = createStore(pReducer, applyMiddleware(sagaMiddleware));
+const store = createStore(pReducer, applyMiddleware(logger, sagaMiddleware));
 
 sagaMiddleware.run(rootSaga);
 
 const persistor = persistStore(store);
 
-export {store, persistor};
+window.store = store;
+export { store, persistor };

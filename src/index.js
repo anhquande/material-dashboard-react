@@ -10,7 +10,11 @@ import indexRoutes from "routes/index.jsx";
 
 import { store } from "store";
 
+import Log from "./Log";
+
 const hist = createBrowserHistory();
+
+Log.info("MainApp is running");
 
 ReactDOM.render(
   <Provider store={store}>
